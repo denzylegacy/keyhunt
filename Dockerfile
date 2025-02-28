@@ -7,8 +7,6 @@ WORKDIR /app
 
 COPY ./app .
 
-RUN ls -la
-
 RUN make
 
-CMD ["./keyhunt", "-m", "bsgs", "-f", "tests/140.txt", "-b", "140", "-t", "8", "-s", "10", "-R"]
+CMD ["./keyhunt", "-m", "bsgs", "-f", "tests/140.txt", "-b", "140", "-t", "4", "-s", "10", "-R"]
