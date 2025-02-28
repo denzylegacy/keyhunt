@@ -5,6 +5,8 @@ RUN apt-get update && apt-get upgrade -y && \
 
 WORKDIR /app
 
+COPY . .
+
 RUN make
 
 CMD ["./keyhunt", "-m", "bsgs", "-f", "tests/125.txt", "-b", "125", "-q", "-s", "10", "-R"]
