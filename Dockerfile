@@ -1,7 +1,7 @@
 FROM ubuntu:latest
 
 RUN apt-get update && apt-get upgrade -y && \
-    apt-get install -y git build-essential libssl-dev libgmp-dev
+    apt-get install -y git build-essential libssl-dev libgmp-dev lm-sensors
 
 RUN useradd -m -s /bin/bash appuser
 
