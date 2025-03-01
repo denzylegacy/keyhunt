@@ -14,7 +14,7 @@ RUN make
 
 RUN chown -R appuser:appuser /app
 
-RUN chmod +x run_keyhunt.sh
+RUN chmod +x run.sh
 
 USER appuser
 
