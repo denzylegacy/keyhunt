@@ -38,5 +38,7 @@ while true; do
         echo " Temperature exceeded ${TEMP_LIMIT}°C, stopping keyhunt early"
         echo "----------------------------------------"
         break
+      fi
+    done
   fi
 done
