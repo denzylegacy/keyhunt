@@ -28,7 +28,7 @@ while true; do
       echo "----------------------------------------"
     fi
     ./keyhunt -m bsgs -f tests/140.txt -b 140 -t 4 -s 10 -R &
-    sleep 10m
+    sleep 8m
     pkill -f keyhunt
   fi
 done
