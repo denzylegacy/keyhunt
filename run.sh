@@ -12,9 +12,9 @@ while true; do
   if [ -n "$TEMP" ] && [ "$TEMP" -gt "$TEMP_LIMIT" ]; then
     echo "----------------------------------------"
     echo " High Temperature Alert: ${TEMP}°C"
-    echo " keyhunt will sleep for 10m..."
+    echo " keyhunt will sleep for 3m..."
     echo "----------------------------------------"
-    sleep 10m  # Rest for 10 minutes if temperature is high
+    sleep 3m  # Rest for 3 minutes if temperature is high
   else
     if [ -n "$TEMP" ]; then
       echo "----------------------------------------"
