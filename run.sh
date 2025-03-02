@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TEMP_LIMIT=75
+TEMP_LIMIT=70
 
 get_cpu_temp() {
   sensors | grep 'Package id 0:' | awk '{print $4}' | cut -d '+' -f2 | cut -d '.' -f1
@@ -12,9 +12,9 @@ while true; do
   if [ -n "$TEMP" ] && [ "$TEMP" -gt "$TEMP_LIMIT" ]; then
     echo "----------------------------------------"
     echo " High Temperature Alert: ${TEMP}°C"
-    echo " keyhunt will sleep for 3m..."
+    echo " keyhunt will sleep for 1m..."
     echo "----------------------------------------"
-    sleep 3m  # Rest for 3 minutes if temperature is high
+    sleep 1m  # Rest for 1 minute if temperature is high
   else
     if [ -n "$TEMP" ]; then
       echo "----------------------------------------"
@@ -27,7 +27,7 @@ while true; do
       echo " Proceeding with program execution by default..."
       echo "----------------------------------------"
     fi
-    ./keyhunt -m bsgs -f tests/140.txt -b 140 -t 4 -s 10 -R &
+    ./keyhunt -m bsgs -f tests/140.txt -b 140 -t 4 -s 10 -q -R &
     sleep 8m
     pkill -f keyhunt
   fi
